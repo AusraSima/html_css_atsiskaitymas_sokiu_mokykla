@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --instrumentserif: 'Instrument Serif', serif;
+    --inter: 'Inter', sans-serif;
+    --violet: #858FBF;
+    --darkgray: #333333;
+    --mediumgray: #666666;
+    --lightgray: #EDEDED;
+    --white: #FFFFFF;
+    --buttonviolet: #9C7FA8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+
+    header {
+        font-family: var(--inter);
+
+        .move {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+                font-family: var(--instrumentserif);
+                color: var(--violet);
+                font-size: 10rem;
+                text-align: justify;
+            }
+
+            h3 {
+                color: var(--mediumgray);
+                font-size: 1.5rem;
+                padding-bottom: 2rem;
+            }
+        }
+
+        .search {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                color: var(--darkgray);
+                font-family: var(--inter);
+                font-size: 2rem;
+                padding-bottom: 1.5rem;
+            }
+
+            input {
+                width: 100%;
+                height: 2.5rem;
+                font-size: 1rem;
+                border: 1px solid var(--lightgray);
+                border-radius: 4px;
+                padding-left: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+
+        hr {
+            width: 100%;
+            color: var(--lightgray);
+        }
+
+        .hidden,
+        .hiddensmall {
+            display: none;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-evenly;
+            font-family: var(--instrumentserif);
+            font-weight: bold;
+            width: 100%;
+            padding: 1rem;
+
+            a {
+                color: var(--violet);
+                text-decoration: none;
+                font-size: 1.5rem;
+
+                &:hover {
+                    color: var(--buttonviolet);
+                }
+            }
+        }
+
+        .hide whenbig {
+            width: 100%;
+            object-fit: cover;
+
+        }
+
+        .registration {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2rem;
+
+            h3 {
+                font-family: var(--instrumentserif);
+                text-transform: capitalize;
+                color: var(--violet);
+                font-size: 1.5rem;
+                text-align: justify;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                font-family: var(--inter);
+
+                label,
+                input,
+                select {
+                    padding-bottom: 0.5rem;
+                }
+
+                input,
+                select {
+                    height: 2rem;
+                    font-size: 1rem;
+                    border: 1px solid var(--lightgray);
+                }
+
+                button {
+                    width: 20%;
+                    height: 2.5rem;
+                    margin-top: 1rem;
+                    background-color: var(--violet);
+                    color: var(--white);
+                    border: none;
+                    border-radius: 4px;
+                    font-size: 1rem;
+
+                    &:hover {
+                        background-color: var(--buttonviolet);
+                    }
+                }
+
+            }
+        }
+
+        .publications {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.1rem;
+                font-family: var(--inter);
+
+                h2,
+                h4 {
+                    font-family: var(--instrumentserif);
+                    color: var(--violet);
+                }
+
+                h2 {
+                    font-size: 1.7rem;
+                    padding-bottom: 1.5rem;
+                }
+
+                h4 {
+                    font-size: 1.35em;
+                    padding-bottom: 0.8rem;
+                }
+
+                p {
+                    padding-bottom: 0.5rem;
+                }
+
+                .more {
+                    color: var(--violet);
+                    padding-bottom: 0.5rem;
+
+                    &:hover {
+                        color: var(--buttonviolet);
+                    }
+                }
+            }
+
+            img {
+                width: 100%;
+                object-fit: cover;
+                padding: 2rem;
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: var(--inter);
+        margin: 2rem;
+
+        .fb {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            padding-bottom: 1rem;
+
+            img {
+                color: var(--violet);
+            }
+        }
+
+        p {
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 641px) {
+
+    body header {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body header .move,
+    .search {
+        width: 50%;
+    }
+
+    body main .hidden {
+        display: block;
+        flex-direction: column;
+    }
+
+    body main .hiddensmall {
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+        object-fit: cover;
+    }
+
+    body main .registration {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+        justify-content: space-around;
+        padding: 1rem 0;
+    }
+
+    body main .hidewhenbig {
+        display: none;
+    }
+
+    body main .text {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-right: 2rem;
+    }
+
+    body main .publications {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 1rem;
+        justify-content: space-around;
+        padding: 1rem 0;
+    }
+
+    body main .publications .smaller {
+        display: flex;
+        flex-direction: row;
+        width: 30%;
+        object-fit: cover;
+    }
+
+}
